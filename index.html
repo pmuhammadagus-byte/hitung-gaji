@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hitung Gaji</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="card">
+    <h1>Hitung Gaji</h1>
+    <form id="formGaji">
+      <label>Jam Kerja</label>
+      <input type="number" id="jamKerja" placeholder="Masukkan jam kerja" required>
+
+      <label>Tarif per Jam (Rp)</label>
+      <input type="number" id="tarifJam" placeholder="Tarif per jam" required>
+
+      <label>Gaji per Hari (Rp)</label>
+      <input type="number" id="gajiHari" placeholder="Gaji jika kerja ≥ 9 jam" required>
+
+      <button type="submit">Hitung</button>
+    </form>
+
+    <div id="hasil" class="hasil" style="display:none;"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
