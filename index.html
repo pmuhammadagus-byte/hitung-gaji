@@ -16,7 +16,22 @@
       <input type="password" id="password" placeholder="Password" required>
       <button type="submit">Masuk</button>
     </form>
+    <p class="link-text">Belum punya akun? <a href="#" id="toDaftar">Daftar</a></p>
     <div id="loginError" class="error" style="display:none;">Username atau password salah</div>
+  </div>
+
+  <div id="daftarScreen" class="card" style="display:none;">
+    <h1>Daftar</h1>
+    <form id="formDaftar">
+      <label>Username</label>
+      <input type="text" id="daftarUsername" placeholder="Username" required>
+      <label>Password</label>
+      <input type="password" id="daftarPassword" placeholder="Password" required>
+      <button type="submit">Daftar</button>
+    </form>
+    <p class="link-text">Sudah punya akun? <a href="#" id="toLogin">Login</a></p>
+    <div id="daftarError" class="error" style="display:none;">Username sudah terdaftar</div>
+    <div id="daftarSukses" class="sukses" style="display:none;">Berhasil daftar, silakan login</div>
   </div>
 
   <div id="appScreen" class="card" style="display:none;">

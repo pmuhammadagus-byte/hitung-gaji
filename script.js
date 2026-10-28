@@ -1,15 +1,46 @@
 const USERS = { admin: 'admin123' };
 
+function getUsers() {
+  return JSON.parse(localStorage.getItem('users') || JSON.stringify(USERS));
+}
+function saveUsers(u) { localStorage.setItem('users', JSON.stringify(u)); }
+
 document.getElementById('formLogin').addEventListener('submit', (e) => {
   e.preventDefault();
   const u = document.getElementById('username').value;
   const p = document.getElementById('password').value;
-  if (USERS[u] === p) {
-    localStorage.setItem('auth', '1');
+  const users = getUsers();
+  if (users[u] === p) {
+    localStorage.setItem('auth', u);
     showApp();
   } else {
     document.getElementById('loginError').style.display = 'block';
   }
+});
+
+document.getElementById('formDaftar').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const u = document.getElementById('daftarUsername').value;
+  const p = document.getElementById('daftarPassword').value;
+  const users = getUsers();
+  if (users[u]) {
+    document.getElementById('daftarError').style.display = 'block';
+    document.getElementById('daftarSukses').style.display = 'none';
+  } else {
+    users[u] = p;
+    saveUsers(users);
+    document.getElementById('daftarError').style.display = 'none';
+    document.getElementById('daftarSukses').style.display = 'block';
+  }
+});
+
+document.getElementById('toDaftar').addEventListener('click', (e) => {
+  e.preventDefault();
+  showDaftar();
+});
+document.getElementById('toLogin').addEventListener('click', (e) => {
+  e.preventDefault();
+  showLogin();
 });
 
 document.getElementById('logoutBtn').addEventListener('click', () => {
@@ -37,10 +68,17 @@ document.getElementById('formGaji').addEventListener('submit', (e) => {
 
 function showApp() {
   document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('daftarScreen').style.display = 'none';
   document.getElementById('appScreen').style.display = 'block';
 }
 function showLogin() {
   document.getElementById('loginScreen').style.display = 'block';
+  document.getElementById('daftarScreen').style.display = 'none';
   document.getElementById('appScreen').style.display = 'none';
 }
-if (localStorage.getItem('auth') === '1') showApp(); else showLogin();
+function showDaftar() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('daftarScreen').style.display = 'block';
+  document.getElementById('appScreen').style.display = 'none';
+}
+if (localStorage.getItem('auth')) showApp(); else showLogin();
