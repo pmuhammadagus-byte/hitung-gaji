@@ -32,3 +32,6 @@ button {
 button:hover { background: #1d4ed8; }
 
 .hasil { margin-top: 16px; padding: 12px; background: #eff6ff; border-radius: 8px; color: #1e40af; font-weight: 600; }
+.error { margin-top: 10px; color: #dc2626; font-size: 0.875rem; text-align: center; }
+.logout { margin-top: 16px; background: #ef4444; }
+.logout:hover { background: #dc2626; }

@@ -7,22 +7,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="card">
+  <div id="loginScreen" class="card">
+    <h1>Login</h1>
+    <form id="formLogin">
+      <label>Username</label>
+      <input type="text" id="username" placeholder="Username" required>
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Masuk</button>
+    </form>
+    <div id="loginError" class="error" style="display:none;">Username atau password salah</div>
+  </div>
+
+  <div id="appScreen" class="card" style="display:none;">
     <h1>Hitung Gaji</h1>
     <form id="formGaji">
       <label>Jam Kerja</label>
       <input type="number" id="jamKerja" placeholder="Masukkan jam kerja" required>
-
       <label>Tarif per Jam (Rp)</label>
       <input type="number" id="tarifJam" placeholder="Tarif per jam" required>
-
       <label>Gaji per Hari (Rp)</label>
       <input type="number" id="gajiHari" placeholder="Gaji jika kerja ≥ 9 jam" required>
-
       <button type="submit">Hitung</button>
     </form>
-
     <div id="hasil" class="hasil" style="display:none;"></div>
+    <button id="logoutBtn" class="logout">Logout</button>
   </div>
   <script src="script.js"></script>
 </body>
