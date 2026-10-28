@@ -38,3 +38,15 @@ button:hover { background: #1d4ed8; }
 .link-text a { color: #2563eb; text-decoration: none; font-weight: 600; }
 .logout { margin-top: 16px; background: #ef4444; }
 .logout:hover { background: #dc2626; }
+
+.section { margin-top: 20px; }
+.section h2 { font-size: 1rem; margin-bottom: 10px; color: #374151; }
+.btn-row { display: flex; gap: 10px; margin-bottom: 10px; }
+.btn-row button { flex: 1; }
+.status { margin-bottom: 10px; font-size: 0.875rem; font-weight: 600; }
+.status-belum { color: #dc2626; }
+.status-masuk { color: #ca8a04; }
+.status-selesai { color: #16a34a; }
+.riwayat { display: flex; flex-direction: column; gap: 6px; }
+.riwayat-item { padding: 8px; background: #f9fafb; border-radius: 6px; font-size: 0.875rem; color: #374151; }
+.riwayat-item .label { color: #6b7280; margin-right: 6px; }
